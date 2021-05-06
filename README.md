@@ -1,1 +1,3 @@
 # MiniTerra
+
+This is Miniterra.
