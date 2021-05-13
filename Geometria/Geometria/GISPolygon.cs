@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Geometria
+namespace Geometria.Geometry
 {
     /// <summary>
     /// 用于GIS的，double类型的多边形类。其外环和内环分开记录，并且遵循外环逆时针、内环顺时针方向的标准。
@@ -289,7 +289,7 @@ namespace Geometria
         /// <returns></returns>
         public bool AddOuterRingPoint(int ptIndex, GeoPoint pt)
         {
-            this.outerRing.AddPoint(ptIndex, pt);
+            this.outerRing.InsertPoint(ptIndex, pt);
             bool valid = this.OuterRingValidityTest();
 
             if (valid)
@@ -322,7 +322,7 @@ namespace Geometria
             else
             {
                 //还原
-                this.outerRing.AddPoint(ptIndex, originalPt);
+                this.outerRing.InsertPoint(ptIndex, originalPt);
                 return false;
             }
         }
@@ -363,7 +363,7 @@ namespace Geometria
         /// <returns></returns>
         public bool AddInnerRingPoint(int ringIndex, int ptIndex, GeoPoint pt)
         {
-            this.innerRingList[ringIndex].AddPoint(ptIndex, pt);
+            this.innerRingList[ringIndex].InsertPoint(ptIndex, pt);
             bool valid = this.InnerRingValidityTest(ringIndex);
 
             if (valid)
@@ -397,7 +397,7 @@ namespace Geometria
             else
             {
                 //还原
-                this.innerRingList[ringIndex].AddPoint(ptIndex, originalPt);
+                this.innerRingList[ringIndex].InsertPoint(ptIndex, originalPt);
                 return false;
             }
         }

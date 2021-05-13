@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Geometria
+namespace Geometria.Geometry
 {
     /// <summary>
     /// 用于GIS的，double类型的折线类。
@@ -25,6 +25,7 @@ namespace Geometria
         public GISPolyline()
         {
             this.id = 0;
+            this.pointsList = new List<GeoPoint>();
             this.mbr = new RectBox();
         }
 
@@ -52,6 +53,14 @@ namespace Geometria
             this.pointsList = new List<GeoPoint>();
             this.pointsList.InsertRange(0, pts);
             this.UpdateMBR();
+        }
+
+        public GISPolyline(GISRing ring)
+        {
+            this.id = ring.id;
+            this.pointsList = ring.pointsList;
+            this.mbr = ring.mbr;
+            this.mbrUpdateRequired = ring.mbrUpdateRequired;
         }
         #endregion
 
@@ -133,6 +142,22 @@ namespace Geometria
                 return len;
             }
         }
+
+        /// <summary>
+        /// 获取自身点列的拷贝
+        /// </summary>
+        public List<GeoPoint> PointsList
+        {
+            get
+            {
+                List<GeoPoint> lst = new List<GeoPoint>();
+                foreach (GeoPoint pt in this.pointsList)
+                {
+                    lst.Add(pt.Clone());
+                }
+                return lst;
+            }
+        }
         #endregion
 
         #region 基本方法
@@ -176,14 +201,33 @@ namespace Geometria
         }
 
         /// <summary>
+        /// 获取所有顶点。结果以GeoPoint的数组形式给出。
+        /// </summary>
+        /// <returns></returns>
+        public GeoPoint[] GetAllPoints()
+        {
+            return this.pointsList.ToArray();
+        }
+
+        /// <summary>
         /// 在指定位置插入一个节点
         /// </summary>
         /// <param name="formerPointIndex">插入位置的后方点的index</param>
         /// <param name="pt">插入点的数据</param>
-        public void AddPoint(int formerPointIndex,GeoPoint pt)
+        public void InsertPoint(int formerPointIndex,GeoPoint pt)
         {
             //未作index越界处理
             this.pointsList.Insert(formerPointIndex, pt);
+            this.mbrUpdateRequired = true;
+        }
+
+        /// <summary>
+        /// 在折线段结尾添加一个节点
+        /// </summary>
+        /// <param name="pt"></param>
+        public void AddPoint(GeoPoint pt)
+        {
+            this.pointsList.Add(pt);
             this.mbrUpdateRequired = true;
         }
 
@@ -304,7 +348,17 @@ namespace Geometria
         /// <returns></returns>
         public static bool Intersects(GISPolyline A,GISPolyline B)
         {
-            if (!RectBox.Overlaps(A.GetMBR(), B.GetMBR()))
+            return A.Intersects(B);
+        }
+
+        /// <summary>
+        /// 检查给定折线是否与自身相交。
+        /// </summary>
+        /// <param name="polyline"></param>
+        /// <returns></returns>
+        public bool Intersects(GISPolyline polyline)
+        {
+            if (!RectBox.Overlaps(this.GetMBR(), polyline.GetMBR()))
             {
                 return false;
             }
@@ -313,13 +367,13 @@ namespace Geometria
             {
                 bool intersects = false;
 
-                int lenA = A.pointsList.Count - 1;
-                int lenB = B.pointsList.Count - 1;
+                int lenA = this.pointsList.Count - 1;
+                int lenB = polyline.pointsList.Count - 1;
                 for (int indexA = 0; indexA < lenA; ++indexA)
                 {
                     for (int indexB = 0; indexB < lenB; ++indexB)
                     {
-                        if (Segment.Intersects(A.EdgeAt(indexA), B.EdgeAt(indexB)))
+                        if (Segment.Intersects(this.EdgeAt(indexA), polyline.EdgeAt(indexB)))
                         {
                             intersects = true;
                             break;
@@ -334,17 +388,6 @@ namespace Geometria
 
                 return intersects;
             }
-
-        }
-
-        /// <summary>
-        /// 检查给定折线是否与自身相交。
-        /// </summary>
-        /// <param name="polyline"></param>
-        /// <returns></returns>
-        public bool Intersects(GISPolyline polyline)
-        {
-            return Intersects(this, polyline);
         }
         
         /// <summary>
@@ -391,14 +434,11 @@ namespace Geometria
         /// </summary>
         /// <param name="id"></param>
         /// <param name="pts"></param>
-        public GISRing(uint id, GeoPoint[] pts)
+        public GISRing(uint id, GeoPoint[] pts) : base(id,pts)
         {
-            this.id = id;
-            this.pointsList = new List<GeoPoint>();
-            this.pointsList.InsertRange(0, pts);
             if (pts[0] != pts[pts.Length - 1])
             {
-                this.pointsList.Add(pts[pts.Length - 1]);
+                this.pointsList.Add(pts[0]);
             }
             this.UpdateMBR();
         }
@@ -408,14 +448,11 @@ namespace Geometria
         /// </summary>
         /// <param name="id">ID</param>
         /// <param name="pts">点列</param>
-        public GISRing(uint id, List<GeoPoint> pts)
+        public GISRing(uint id, List<GeoPoint> pts) : base(id,pts)
         {
-            this.id = id;
-            this.pointsList = new List<GeoPoint>();
-            this.pointsList.InsertRange(0, pts);
             if (pts[0] != pts[pts.Count - 1])
             {
-                this.pointsList.Add(pts[pts.Count - 1]);
+                this.pointsList.Add(pts[0]);
             }
             this.UpdateMBR();
         }
@@ -559,6 +596,8 @@ namespace Geometria
         public bool Contains(GISPolyline polyline)
         {
             //包围盒过滤
+            RectBox a = this.GetMBR();
+            RectBox b = polyline.GetMBR();
             if (!this.GetMBR().Contains(polyline.GetMBR()))
             {
                 return false;

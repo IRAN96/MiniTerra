@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Geometria
+namespace Geometria.Geometry
 {
     /// <summary>
-    /// 用于GIS的，double类型的折线集合。
+    /// 用于GIS的，double类型的多边形集合。
     /// <para>继承自：GeometryMultiObject</para>
     /// </summary>
-    class GISMultiPolyline : GeometryMultiObject
+    public class GISMultiPolygon: GeometryMultiObject
     {
         #region 字段
-        //所有折线的数据
-        protected List<GISPolyline> polylineList;
+        //所有多边形的数据
+        protected List<GISPolygon> polygonList;
         protected RectBox mbr;
         protected bool mbrUpdateRequired = false;
         #endregion
@@ -21,10 +21,10 @@ namespace Geometria
         /// <summary>
         /// 空构造
         /// </summary>
-        public GISMultiPolyline()
+        public GISMultiPolygon()
         {
             this.id = 0;
-            this.polylineList = new List<GISPolyline>();
+            this.polygonList = new List<GISPolygon>();
             this.mbr = new RectBox();
         }
 
@@ -32,14 +32,14 @@ namespace Geometria
         /// 给定id和折线列表数据的构造
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="lineList"></param>
-        public GISMultiPolyline(uint id, List<GISPolyline> lineList)
+        /// <param name="gonList"></param>
+        public GISMultiPolygon(uint id, List<GISPolygon> gonList)
         {
             this.id = id;
-            this.polylineList = new List<GISPolyline>();
-            foreach (GISPolyline line in lineList)
+            this.polygonList = new List<GISPolygon>();
+            foreach (GISPolygon polygon in gonList)
             {
-                this.polylineList.Add(line.Clone());
+                this.polygonList.Add(polygon.Clone());
             }
         }
 
@@ -47,12 +47,12 @@ namespace Geometria
         /// 给定id和单个折线段的构造。该MultiPolyline对象只有一条折线。
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="line"></param>
-        public GISMultiPolyline(uint id, GISPolyline line)
+        /// <param name="polygon"></param>
+        public GISMultiPolygon(uint id, GISPolygon polygon)
         {
             this.id = id;
-            this.polylineList = new List<GISPolyline>();
-            this.polylineList.Add(line.Clone());
+            this.polygonList = new List<GISPolygon>();
+            this.polygonList.Add(polygon.Clone());
         }
         #endregion
 
@@ -64,7 +64,7 @@ namespace Geometria
         {
             get
             {
-                return this.polylineList.Count;
+                return this.polygonList.Count;
             }
         }
 
@@ -91,12 +91,12 @@ namespace Geometria
         /// </summary>
         protected void UpdateMBR()
         {
-            if (this.polylineList.Count > 0)
+            if (this.polygonList.Count > 0)
             {
-                this.mbr = this.polylineList[0].GetMBR().Clone();
-                foreach (GISPolyline line in this.polylineList)
+                this.mbr = this.polygonList[0].GetMBR().Clone();
+                foreach (GISPolygon polygon in this.polygonList)
                 {
-                    this.mbr += line.GetMBR();
+                    this.mbr += polygon.GetMBR();
                 }
             }
             else
@@ -110,20 +110,20 @@ namespace Geometria
         /// 获取该对象的深拷贝
         /// </summary>
         /// <returns></returns>
-        public GISMultiPolyline Clone()
+        public GISMultiPolygon Clone()
         {
-            GISMultiPolyline cloned = new GISMultiPolyline(this.id, this.polylineList);
+            GISMultiPolygon cloned = new GISMultiPolygon(this.id, this.polygonList);
             cloned.mbr = this.mbr;
             return cloned;
         }
 
         /// <summary>
-        /// 获取该MultiPolyline对象内包含的Polyline数量
+        /// 获取该MultiPolygon对象内包含的Polygon数量
         /// </summary>
         /// <returns></returns>
         public int GetElementCount()
         {
-            return this.polylineList.Count;
+            return this.polygonList.Count;
         }
 
         /// <summary>
@@ -141,44 +141,44 @@ namespace Geometria
         }
 
         /// <summary>
-        /// 添加一条折线
+        /// 添加一个多边形
         /// </summary>
-        /// <param name="line"></param>
-        public void AddPolyline(GISPolyline line)
+        /// <param name="polygon"></param>
+        public void AddPolygon(GISPolygon polygon)
         {
-            this.polylineList.Add(line);
+            this.polygonList.Add(polygon);
             this.mbrUpdateRequired = true;
         }
 
         /// <summary>
-        /// 修改给定位置的折线
-        /// </summary>
-        /// <param name="index"></param>
-        /// <param name="line"></param>
-        public void SetPolyline(int index, GISPolyline line)
-        {
-            this.polylineList[index] = line.Clone();
-            this.mbrUpdateRequired = true;
-        }
-
-        /// <summary>
-        /// 删除指定位置的折线
+        /// 修改给定位置的多边形
         /// </summary>
         /// <param name="index"></param>
-        public void DeletePolyline(int index)
+        /// <param name="polygon"></param>
+        public void SetPolygon(int index, GISPolygon polygon)
         {
-            this.polylineList.RemoveAt(index);
+            this.polygonList[index] = polygon.Clone();
             this.mbrUpdateRequired = true;
         }
 
         /// <summary>
-        /// 获取指定位置的折线
+        /// 删除指定位置的多边形
+        /// </summary>
+        /// <param name="index"></param>
+        public void DeletePolygon(int index)
+        {
+            this.polygonList.RemoveAt(index);
+            this.mbrUpdateRequired = true;
+        }
+
+        /// <summary>
+        /// 获取指定位置的多边形
         /// </summary>
         /// <param name="index"></param>
         /// <returns></returns>
-        public GISPolyline GetPolylineAt(int index)
+        public GISPolygon GetPolygonAt(int index)
         {
-            return this.polylineList[index].Clone();
+            return this.polygonList[index].Clone();
         }
         #endregion
     }

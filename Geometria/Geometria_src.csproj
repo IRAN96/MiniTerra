@@ -1,0 +1,11 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <NoWin32Manifest>true</NoWin32Manifest>
+    <AssemblyName>Geometria_src</AssemblyName>
+    <RootNamespace>Geometria</RootNamespace>
+  </PropertyGroup>
+
+</Project>

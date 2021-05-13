@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Geometria
+namespace Geometria.Geometry
 {
     /// <summary>
     /// [抽象]几何对象。在二维直角坐标系下具有有限的范围。
@@ -1134,7 +1134,7 @@ namespace Geometria
             {
                 Vector2D norm = this.GetLeftNormalVector();
                 Vector2D vecPt = new Vector2D(pt.coordX - this.startPoint.coordX, pt.coordY - this.startPoint.coordY);
-                if(Vector2D.DotProduct(norm,vecPt) <= errorRange)
+                if(Math.Abs(Vector2D.DotProduct(norm,vecPt)) <= errorRange)
                 {
                     return true;
                 }

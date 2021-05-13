@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Geometria
+namespace Geometria.Geometry
 {
     /// <summary>
     /// 用于GIS的，double类型的点集合。
