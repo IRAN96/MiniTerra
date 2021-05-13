@@ -654,6 +654,16 @@ namespace Geometria.Geometry
                 return this.yMax - this.yMin;
             }
         }
+
+        public GeoPoint Center
+        {
+            get
+            {
+                double x = (this.xMin + this.xMax) / 2;
+                double y = (this.yMin + this.yMax) / 2;
+                return new GeoPoint(x, y);
+            }
+        }
         #endregion
 
         #region 基本方法

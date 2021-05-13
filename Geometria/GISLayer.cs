@@ -9,7 +9,7 @@ using Geometria.Enumerates;
 namespace Geometria.Layers
 {
     /// <summary>
-    /// GIS的图层。功能最简单的系统唯一图层。
+    /// GIS的矢量图层。功能最简单的系统唯一图层。
     /// </summary>
     public class GISSimpleUniqueLayer
     {
@@ -20,6 +20,7 @@ namespace Geometria.Layers
         private GeometryObjectType featureGeometryType;
         //地理实体
         public List<Feature> featureList;
+
         private RectBox mbr;
         private bool mbrUpdateRequired = false;
         #endregion
@@ -174,5 +175,6 @@ namespace Geometria.Layers
 
         //todo 对字段的增删操作
         #endregion
+ 
     }
 }

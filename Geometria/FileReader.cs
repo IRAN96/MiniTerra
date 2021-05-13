@@ -102,9 +102,14 @@ namespace Geometria.FileIO
                         polygon.id = id;
                         GISRing outer = new GISRing(0, outerRingPts);
                         polygon.SetOuterRing(outer);
-                        //将多边形录入图层
-                        Feature f = new Feature(polygon, null);
-                        outLayer.AddFeature(f);
+                        //把第一个多边形无视掉，因为第一个的数据很有问题。。。
+                        if(id > 1)
+                        {
+                            //将多边形录入图层
+                            Feature f = new Feature(polygon, null);
+                            outLayer.AddFeature(f);
+                        }
+                        ++id;
                     }
                 }
 

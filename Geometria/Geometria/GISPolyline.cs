@@ -144,6 +144,17 @@ namespace Geometria.Geometry
         }
 
         /// <summary>
+        /// 获取自身所含顶点的数量
+        /// </summary>
+        public int Count
+        {
+            get
+            {
+                return this.pointsList.Count;
+            }
+        }
+
+        /// <summary>
         /// 获取自身点列的拷贝
         /// </summary>
         public List<GeoPoint> PointsList

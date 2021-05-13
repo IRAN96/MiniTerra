@@ -1,0 +1,12 @@
+D:\C Sharp Workspace\IRAN96\MiniTerra\Geometria\bin\Release\net5.0\Geometria.deps.json
+D:\C Sharp Workspace\IRAN96\MiniTerra\Geometria\bin\Release\net5.0\Geometria.dll
+D:\C Sharp Workspace\IRAN96\MiniTerra\Geometria\bin\Release\net5.0\ref\Geometria.dll
+D:\C Sharp Workspace\IRAN96\MiniTerra\Geometria\bin\Release\net5.0\Geometria.pdb
+D:\C Sharp Workspace\IRAN96\MiniTerra\Geometria\obj\Release\net5.0\Geometria.csprojAssemblyReference.cache
+D:\C Sharp Workspace\IRAN96\MiniTerra\Geometria\obj\Release\net5.0\Geometria.GeneratedMSBuildEditorConfig.editorconfig
+D:\C Sharp Workspace\IRAN96\MiniTerra\Geometria\obj\Release\net5.0\Geometria.AssemblyInfoInputs.cache
+D:\C Sharp Workspace\IRAN96\MiniTerra\Geometria\obj\Release\net5.0\Geometria.AssemblyInfo.cs
+D:\C Sharp Workspace\IRAN96\MiniTerra\Geometria\obj\Release\net5.0\Geometria.csproj.CoreCompileInputs.cache
+D:\C Sharp Workspace\IRAN96\MiniTerra\Geometria\obj\Release\net5.0\Geometria.dll
+D:\C Sharp Workspace\IRAN96\MiniTerra\Geometria\obj\Release\net5.0\ref\Geometria.dll
+D:\C Sharp Workspace\IRAN96\MiniTerra\Geometria\obj\Release\net5.0\Geometria.pdb

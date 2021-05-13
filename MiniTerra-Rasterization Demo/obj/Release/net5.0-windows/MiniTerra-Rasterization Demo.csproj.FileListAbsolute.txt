@@ -1,0 +1,21 @@
+D:\C Sharp Workspace\IRAN96\MiniTerra\MiniTerra\bin\Release\net5.0-windows\MiniTerra-Rasterization Demo.exe
+D:\C Sharp Workspace\IRAN96\MiniTerra\MiniTerra\bin\Release\net5.0-windows\MiniTerra-Rasterization Demo.deps.json
+D:\C Sharp Workspace\IRAN96\MiniTerra\MiniTerra\bin\Release\net5.0-windows\MiniTerra-Rasterization Demo.runtimeconfig.json
+D:\C Sharp Workspace\IRAN96\MiniTerra\MiniTerra\bin\Release\net5.0-windows\MiniTerra-Rasterization Demo.runtimeconfig.dev.json
+D:\C Sharp Workspace\IRAN96\MiniTerra\MiniTerra\bin\Release\net5.0-windows\MiniTerra-Rasterization Demo.dll
+D:\C Sharp Workspace\IRAN96\MiniTerra\MiniTerra\bin\Release\net5.0-windows\ref\MiniTerra-Rasterization Demo.dll
+D:\C Sharp Workspace\IRAN96\MiniTerra\MiniTerra\bin\Release\net5.0-windows\MiniTerra-Rasterization Demo.pdb
+D:\C Sharp Workspace\IRAN96\MiniTerra\MiniTerra\bin\Release\net5.0-windows\Geometria.dll
+D:\C Sharp Workspace\IRAN96\MiniTerra\MiniTerra\bin\Release\net5.0-windows\Geometria.pdb
+D:\C Sharp Workspace\IRAN96\MiniTerra\MiniTerra\obj\Release\net5.0-windows\MiniTerra-Rasterization Demo.csprojAssemblyReference.cache
+D:\C Sharp Workspace\IRAN96\MiniTerra\MiniTerra\obj\Release\net5.0-windows\MiniTerra.RasterizeDemo.resources
+D:\C Sharp Workspace\IRAN96\MiniTerra\MiniTerra\obj\Release\net5.0-windows\MiniTerra-Rasterization Demo.csproj.GenerateResource.cache
+D:\C Sharp Workspace\IRAN96\MiniTerra\MiniTerra\obj\Release\net5.0-windows\MiniTerra-Rasterization Demo.GeneratedMSBuildEditorConfig.editorconfig
+D:\C Sharp Workspace\IRAN96\MiniTerra\MiniTerra\obj\Release\net5.0-windows\MiniTerra-Rasterization Demo.AssemblyInfoInputs.cache
+D:\C Sharp Workspace\IRAN96\MiniTerra\MiniTerra\obj\Release\net5.0-windows\MiniTerra-Rasterization Demo.AssemblyInfo.cs
+D:\C Sharp Workspace\IRAN96\MiniTerra\MiniTerra\obj\Release\net5.0-windows\MiniTerra-Rasterization Demo.csproj.CoreCompileInputs.cache
+D:\C Sharp Workspace\IRAN96\MiniTerra\MiniTerra\obj\Release\net5.0-windows\MiniTerra-Rasterization Demo.csproj.CopyComplete
+D:\C Sharp Workspace\IRAN96\MiniTerra\MiniTerra\obj\Release\net5.0-windows\MiniTerra-Rasterization Demo.dll
+D:\C Sharp Workspace\IRAN96\MiniTerra\MiniTerra\obj\Release\net5.0-windows\ref\MiniTerra-Rasterization Demo.dll
+D:\C Sharp Workspace\IRAN96\MiniTerra\MiniTerra\obj\Release\net5.0-windows\MiniTerra-Rasterization Demo.pdb
+D:\C Sharp Workspace\IRAN96\MiniTerra\MiniTerra\obj\Release\net5.0-windows\MiniTerra-Rasterization Demo.genruntimeconfig.cache
