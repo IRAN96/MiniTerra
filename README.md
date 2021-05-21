@@ -1,5 +1,2 @@
 # MiniTerra
-
-This is Miniterra.
-
-test add things.
+A Prototype GIS Project.
