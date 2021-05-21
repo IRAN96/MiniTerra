@@ -8,8 +8,4 @@
     <RootNamespace>MiniTerra_Rasterization_Demo</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Geometria\Geometria.csproj" />
-  </ItemGroup>
-
 </Project>

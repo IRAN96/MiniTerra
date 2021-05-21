@@ -1,9 +1,0 @@
-D:\C Sharp Workspace\IRAN96\MiniTerra\Geometria\bin\Debug\netcoreapp3.1\Geometria.deps.json
-D:\C Sharp Workspace\IRAN96\MiniTerra\Geometria\bin\Debug\netcoreapp3.1\Geometria.dll
-D:\C Sharp Workspace\IRAN96\MiniTerra\Geometria\bin\Debug\netcoreapp3.1\Geometria.pdb
-D:\C Sharp Workspace\IRAN96\MiniTerra\Geometria\obj\Debug\netcoreapp3.1\Geometria.csprojAssemblyReference.cache
-D:\C Sharp Workspace\IRAN96\MiniTerra\Geometria\obj\Debug\netcoreapp3.1\Geometria.AssemblyInfoInputs.cache
-D:\C Sharp Workspace\IRAN96\MiniTerra\Geometria\obj\Debug\netcoreapp3.1\Geometria.AssemblyInfo.cs
-D:\C Sharp Workspace\IRAN96\MiniTerra\Geometria\obj\Debug\netcoreapp3.1\Geometria.csproj.CoreCompileInputs.cache
-D:\C Sharp Workspace\IRAN96\MiniTerra\Geometria\obj\Debug\netcoreapp3.1\Geometria.dll
-D:\C Sharp Workspace\IRAN96\MiniTerra\Geometria\obj\Debug\netcoreapp3.1\Geometria.pdb
