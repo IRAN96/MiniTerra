@@ -1,0 +1,8 @@
+D:\XY\GIS design\MiniTerra\MiniTerra\MyMapObjects\obj\Debug\MyMapObjects.csproj.CoreCompileInputs.cache
+D:\XY\GIS design\MiniTerra\MiniTerra\MyMapObjects\bin\Debug\MyMapObjects.dll.config
+D:\XY\GIS design\MiniTerra\MiniTerra\MyMapObjects\bin\Debug\MyMapObjects.dll
+D:\XY\GIS design\MiniTerra\MiniTerra\MyMapObjects\bin\Debug\MyMapObjects.pdb
+D:\XY\GIS design\MiniTerra\MiniTerra\MyMapObjects\obj\Debug\MyMapObjects.dll
+D:\XY\GIS design\MiniTerra\MiniTerra\MyMapObjects\obj\Debug\MyMapObjects.pdb
+D:\XY\GIS design\MiniTerra\MiniTerra\MyMapObjects\obj\Debug\MyMapObjects.moMapControl.resources
+D:\XY\GIS design\MiniTerra\MiniTerra\MyMapObjects\obj\Debug\MyMapObjects.csproj.GenerateResource.cache

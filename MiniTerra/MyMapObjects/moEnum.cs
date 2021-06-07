@@ -81,4 +81,28 @@ namespace MyMapObjects
         BottomCenter=7,
         BottomRight=8
     }
+
+    public enum CoordinateSystemTypeConstant
+    {
+        GeographicCoordinate = 0,
+        ProjectedCoordinate = 1
+    }
+
+    public enum AngleUnitType
+    {
+        Radian=0,
+        Degree=1
+    }
+
+    public enum ProjectionType
+    {
+        Lambert=0,
+        Albert=1,
+        IsometricObliqueAzimuthProjection=2
+    }
+
+    public enum LinearUnitType
+    {
+        Meter=0
+    }
 }

@@ -17,6 +17,8 @@ namespace MyMapObjects
         private Color _FlashColor = Color.Green;//绘制闪烁图形的颜色
         //运行时属性变量
         private moLayers _Layers = new moLayers();//图层集合
+        private moCoordinateSystem _CoordinateSystem;//坐标系统
+        //private ProjectInfo _ProjectInfo;
         //模块级变量
         private moMapDrawingReference mMapDrawingReference;//地图-屏幕坐标转换对象
         private Bitmap mBufferMap1 = new Bitmap(10, 10);//缓冲位图，含要素及其注记
@@ -62,7 +64,6 @@ namespace MyMapObjects
         /// <summary>
         /// 获得比例尺倒数
         /// </summary>
-        [Browsable(false)]
         public double MapScale
         {
             get { return mMapDrawingReference.MapScale; }
@@ -71,7 +72,6 @@ namespace MyMapObjects
         /// <summary>
         /// 获取控件左上点的X坐标（地图坐标）
         /// </summary>
-        [Browsable(false)]
         public double MapOffsetX
         {
             get { return mMapDrawingReference.OffsetX; }
@@ -80,12 +80,10 @@ namespace MyMapObjects
         /// <summary>
         /// 获取控件左上点的Y坐标（地图坐标）
         /// </summary>
-        [Browsable(false)]
         public double MapOffsetY
         {
             get { return mMapDrawingReference.OffsetY; }
         }
-
         /// <summary>
         /// 获取或设置选择颜色
         /// </summary>
@@ -138,6 +136,7 @@ namespace MyMapObjects
             sExtent = new moRectangle(sMinX, sMaxX, sMinY, sMaxY);
             return sExtent;
         }
+
         /// <summary>
         /// 获取地图范围
         /// </summary>
@@ -175,6 +174,7 @@ namespace MyMapObjects
             sFullExtent = new moRectangle(sMinX, sMaxX, sMinY, sMaxY);
             return sFullExtent;
         }
+
         /// <summary>
         /// 在窗口内显示地图全部范围
         /// </summary>
@@ -197,6 +197,7 @@ namespace MyMapObjects
                 }
             }
         }
+
         /// <summary>
         /// 以指定中心和系数对地图进行缩放
         /// </summary>
@@ -214,6 +215,7 @@ namespace MyMapObjects
             if (MapScaleChanged != null)
                 MapScaleChanged(this);
         }
+
         /// <summary>
         /// 在窗口内显示指定范围（框选放大缩小）
         /// </summary>
@@ -232,6 +234,7 @@ namespace MyMapObjects
             if (MapScaleChanged != null)
                 MapScaleChanged(this);
         }
+
         /// <summary>
         /// 将地图平移指定量
         /// </summary>
@@ -246,6 +249,7 @@ namespace MyMapObjects
             this.UseWaitCursor = false;
             Refresh();
         }
+
         /// <summary>
         /// 将屏幕坐标转换为地图坐标
         /// </summary>
@@ -257,6 +261,7 @@ namespace MyMapObjects
             moPoint sPoint = mMapDrawingReference.ToMapPoint(x, y);
             return sPoint;
         }
+
         /// <summary>
         /// 地图坐标转换为屏幕坐标
         /// </summary>
@@ -268,6 +273,7 @@ namespace MyMapObjects
             moPoint sPoint = mMapDrawingReference.FromMapPoint(x, y);
             return sPoint;
         }
+
         /// <summary>
         /// 屏幕距离转换为地图距离
         /// </summary>
@@ -278,6 +284,7 @@ namespace MyMapObjects
             double sDis = mMapDrawingReference.ToMapDistance(dis);
             return sDis;
         }
+
         /// <summary>
         /// 地图距离转换为屏幕距离
         /// </summary>
@@ -288,6 +295,7 @@ namespace MyMapObjects
             double sDis = mMapDrawingReference.FromMapDistance(dis);
             return sDis;
         }
+
         /// <summary>
         /// 重新绘制地图
         /// </summary>
@@ -299,6 +307,7 @@ namespace MyMapObjects
             this.UseWaitCursor = false;
             Refresh();
         }
+
         /// <summary>
         /// 重新绘制跟踪图形
         /// </summary>
@@ -309,6 +318,7 @@ namespace MyMapObjects
             this.UseWaitCursor = false;
             Refresh();
         }
+
         /// <summary>
         /// 将地图图像移动到指定位置（屏幕坐标）
         /// </summary>
@@ -323,6 +333,7 @@ namespace MyMapObjects
             g.DrawImage(mBufferMap3, 0, 0);
             g.Dispose();
         }
+
         /// <summary>
         /// 对指定图形数组，以指定的次数和事件间隔进行闪烁显示
         /// </summary>
@@ -333,6 +344,7 @@ namespace MyMapObjects
         {
             mFlashControler.StartFlash(shapes, times, interval);
         }
+
         /// <summary>
         /// 获取绘图工具（绘制非持久图形）
         /// </summary>
@@ -343,6 +355,7 @@ namespace MyMapObjects
             moUserDrawingTool sDrawingTool = CreateDrawingTool(g);
             return sDrawingTool;
         }
+
         /// <summary>
         /// 根据指定的选择盒与选择方法执行选择
         /// </summary>
@@ -365,6 +378,56 @@ namespace MyMapObjects
                     sLayer.SelectedFeatures.Clear();
                 }
             }
+        }
+
+        /// <summary>
+        /// 按照条件查询
+        /// </summary>
+        /// <param name="layerIndex"></param>
+        /// <param name="fieldName"></param>
+        /// <param name="condition"></param>
+        public void SelectByCondition(Int32 layerIndex, string fieldName, string condition)
+        {
+            //condition是字符串，私有函数里会有一个解析condition的函数供这里使用
+        }
+
+        /// <summary>
+        /// 保存项目文件
+        /// </summary>
+        /// <param name="path"></param>
+        /// <param name="name"></param>
+        public void SaveProject(string path, string name)
+        {
+
+        }
+
+        /// <summary>
+        /// 读取项目文件
+        /// </summary>
+        /// <param name="path"></param>
+        public void ReadProject(string path)
+        {
+
+        }
+
+        /// <summary>
+        /// 保存指定图层为shp文件
+        /// </summary>
+        /// <param name="path"></param>
+        /// <param name="name"></param>
+        /// <param name="layerIndex"></param>
+        public void SaveShpFile(string path, string name, Int32 layerIndex)
+        {
+
+        }
+
+        /// <summary>
+        /// 读取shp文件
+        /// </summary>
+        /// <param name="path"></param>
+        public void ReadShpFile(string path)
+        {
+
         }
         #endregion
 
@@ -455,7 +518,7 @@ namespace MyMapObjects
         private void ResizeBufferMap()
         {
             Rectangle sClientRectangle = this.ClientRectangle;
-            if (sClientRectangle.Width > 0 && sClientRectangle.Height > 0)
+            if (sClientRectangle.IsEmpty == false)
             {
                 if (sClientRectangle.Width != mBufferMap1.Width || sClientRectangle.Height != mBufferMap1.Height && sClientRectangle.Width > 0 && sClientRectangle.Height > 0)
                 {
