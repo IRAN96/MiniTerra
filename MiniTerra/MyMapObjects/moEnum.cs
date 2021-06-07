@@ -81,4 +81,10 @@ namespace MyMapObjects
         BottomCenter=7,
         BottomRight=8
     }
+
+    public enum CoordinateSystemTypeConstant
+    {
+        GeographicCoordinate = 0,
+        ProjectedCoordinate = 1
+    }
 }

@@ -38,11 +38,13 @@
   <ItemGroup>
     <Compile Include="moAttributes.cs" />
     <Compile Include="moClassBreaksRenderer.cs" />
+    <Compile Include="moCoordinateSystem.cs" />
     <Compile Include="moEnum.cs" />
     <Compile Include="moFeature.cs" />
     <Compile Include="moFeatures.cs" />
     <Compile Include="moField.cs" />
     <Compile Include="moFields.cs" />
+    <Compile Include="moGeoCoordinateSystem.cs" />
     <Compile Include="moGeometry.cs" />
     <Compile Include="moLabelRenderer.cs" />
     <Compile Include="moLayers.cs" />
@@ -57,6 +59,7 @@
     <Compile Include="moParts.cs" />
     <Compile Include="moPoint.cs" />
     <Compile Include="moPoints.cs" />
+    <Compile Include="moProjectedCoordinateSystem.cs" />
     <Compile Include="moRectangle.cs" />
     <Compile Include="moRenderer.cs" />
     <Compile Include="moShape.cs" />
