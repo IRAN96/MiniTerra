@@ -1,8 +1,0 @@
-D:\XY\GIS design\MiniTerra\MiniTerra\MiniTerra-Main\bin\Debug\MiniTerra-Main.exe.config
-D:\XY\GIS design\MiniTerra\MiniTerra\MiniTerra-Main\bin\Debug\MiniTerra-Main.exe
-D:\XY\GIS design\MiniTerra\MiniTerra\MiniTerra-Main\bin\Debug\MiniTerra-Main.pdb
-D:\XY\GIS design\MiniTerra\MiniTerra\MiniTerra-Main\obj\Debug\MiniTerra_Main.Properties.Resources.resources
-D:\XY\GIS design\MiniTerra\MiniTerra\MiniTerra-Main\obj\Debug\MiniTerra-Main.csproj.GenerateResource.cache
-D:\XY\GIS design\MiniTerra\MiniTerra\MiniTerra-Main\obj\Debug\MiniTerra-Main.csproj.CoreCompileInputs.cache
-D:\XY\GIS design\MiniTerra\MiniTerra\MiniTerra-Main\obj\Debug\MiniTerra-Main.exe
-D:\XY\GIS design\MiniTerra\MiniTerra\MiniTerra-Main\obj\Debug\MiniTerra-Main.pdb

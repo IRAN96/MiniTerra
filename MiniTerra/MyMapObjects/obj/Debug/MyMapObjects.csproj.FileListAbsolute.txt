@@ -6,3 +6,12 @@ D:\XY\GIS design\MiniTerra\MiniTerra\MyMapObjects\obj\Debug\MyMapObjects.dll
 D:\XY\GIS design\MiniTerra\MiniTerra\MyMapObjects\obj\Debug\MyMapObjects.pdb
 D:\XY\GIS design\MiniTerra\MiniTerra\MyMapObjects\obj\Debug\MyMapObjects.moMapControl.resources
 D:\XY\GIS design\MiniTerra\MiniTerra\MyMapObjects\obj\Debug\MyMapObjects.csproj.GenerateResource.cache
+D:\C Sharp Workspace\IRAN96\MiniTerra\MiniTerra\MyMapObjects\bin\Debug\MyMapObjects.dll.config
+D:\C Sharp Workspace\IRAN96\MiniTerra\MiniTerra\MyMapObjects\bin\Debug\MyMapObjects.dll
+D:\C Sharp Workspace\IRAN96\MiniTerra\MiniTerra\MyMapObjects\bin\Debug\MyMapObjects.pdb
+D:\C Sharp Workspace\IRAN96\MiniTerra\MiniTerra\MyMapObjects\obj\Debug\MyMapObjects.csprojAssemblyReference.cache
+D:\C Sharp Workspace\IRAN96\MiniTerra\MiniTerra\MyMapObjects\obj\Debug\MyMapObjects.moMapControl.resources
+D:\C Sharp Workspace\IRAN96\MiniTerra\MiniTerra\MyMapObjects\obj\Debug\MyMapObjects.csproj.GenerateResource.cache
+D:\C Sharp Workspace\IRAN96\MiniTerra\MiniTerra\MyMapObjects\obj\Debug\MyMapObjects.csproj.CoreCompileInputs.cache
+D:\C Sharp Workspace\IRAN96\MiniTerra\MiniTerra\MyMapObjects\obj\Debug\MyMapObjects.dll
+D:\C Sharp Workspace\IRAN96\MiniTerra\MiniTerra\MyMapObjects\obj\Debug\MyMapObjects.pdb
